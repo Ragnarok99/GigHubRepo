@@ -251,6 +251,10 @@
     <Compile Include="Migrations\201704022229047_AddAttandce.Designer.cs">
       <DependentUpon>201704022229047_AddAttandce.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704092243593_AddIsCanceledToGig.cs" />
+    <Compile Include="Migrations\201704092243593_AddIsCanceledToGig.Designer.cs">
+      <DependentUpon>201704092243593_AddIsCanceledToGig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Attendance.cs" />
@@ -381,6 +385,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704022229047_AddAttandce.resx">
       <DependentUpon>201704022229047_AddAttandce.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704092243593_AddIsCanceledToGig.resx">
+      <DependentUpon>201704092243593_AddIsCanceledToGig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -354,3 +354,4 @@ E:\.Net apps\repoGigHub\GigHubRepo\GigHub\obj\Debug\GigHub.Migrations.AddAttandc
 E:\.Net apps\repoGigHub\GigHubRepo\GigHub\obj\Debug\GigHub.csproj.GenerateResource.Cache
 E:\.Net apps\repoGigHub\GigHubRepo\GigHub\obj\Debug\GigHub.dll
 E:\.Net apps\repoGigHub\GigHubRepo\GigHub\obj\Debug\GigHub.pdb
+E:\.Net apps\repoGigHub\GigHubRepo\GigHub\obj\Debug\GigHub.Migrations.AddIsCanceledToGig.resources
