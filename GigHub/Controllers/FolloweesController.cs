@@ -23,6 +23,8 @@ namespace GigHub.Controllers
                 .Select(f => f.Followee)
                 .ToList();
 
+            
+
             return View(artists);
         }
     }

@@ -12,7 +12,10 @@ namespace GigHub
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                         "~/Scripts/app/services/attendanceService.js",
+                        "~/Scripts/app/services/detailService.js",
+
                         "~/Scripts/app/controllers/gigsController.js",
+                        "~/Scripts/app/controllers/detailsController.js",
                         "~/Scripts/app/app.js"
 
                 ));
@@ -39,7 +42,7 @@ namespace GigHub
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
-            BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = false;
 
         }
     }
