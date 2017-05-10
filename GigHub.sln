@@ -19,13 +19,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 2
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://devemmanuel.visualstudio.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = GigHub\\GigHub.csproj
-		SccProjectName1 = GigHub
-		SccLocalPath1 = GigHub
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		LessCompiler = 3bc5933e-016b-4396-98e5-9e3e7f994102
 	EndGlobalSection
 EndGlobal

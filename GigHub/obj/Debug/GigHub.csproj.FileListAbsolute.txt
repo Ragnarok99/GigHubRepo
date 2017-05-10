@@ -342,7 +342,6 @@ E:\.Net apps\repoGigHub\GigHubRepo\GigHub\bin\es\Microsoft.Owin.Security.Faceboo
 E:\.Net apps\repoGigHub\GigHubRepo\GigHub\bin\es\Microsoft.Owin.Security.Google.resources.dll
 E:\.Net apps\repoGigHub\GigHubRepo\GigHub\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
 E:\.Net apps\repoGigHub\GigHubRepo\GigHub\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
-E:\.Net apps\repoGigHub\GigHubRepo\GigHub\obj\Debug\GigHub.csprojResolveAssemblyReference.cache
 E:\.Net apps\repoGigHub\GigHubRepo\GigHub\obj\Debug\GigHub.Migrations.InitialModel.resources
 E:\.Net apps\repoGigHub\GigHubRepo\GigHub\obj\Debug\GigHub.Migrations.DomainModels.resources
 E:\.Net apps\repoGigHub\GigHubRepo\GigHub\obj\Debug\GigHub.Migrations.createGigTable.resources
@@ -356,3 +355,7 @@ E:\.Net apps\repoGigHub\GigHubRepo\GigHub\obj\Debug\GigHub.dll
 E:\.Net apps\repoGigHub\GigHubRepo\GigHub\obj\Debug\GigHub.pdb
 E:\.Net apps\repoGigHub\GigHubRepo\GigHub\obj\Debug\GigHub.Migrations.AddIsCanceledToGig.resources
 E:\.Net apps\repoGigHub\GigHubRepo\GigHub\obj\Debug\GigHub.Migrations.AddNotification.resources
+E:\.Net apps\repoGigHub\GigHubRepo\GigHub\bin\AutoMapper.dll
+E:\.Net apps\repoGigHub\GigHubRepo\GigHub\bin\AutoMapper.xml
+E:\.Net apps\repoGigHub\GigHubRepo\GigHub\obj\Debug\GigHub.csprojResolveAssemblyReference.cache
+E:\.Net apps\repoGigHub\GigHubRepo\GigHub\obj\Debug\GigHub.Migrations.FollowArtist.resources

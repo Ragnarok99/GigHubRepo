@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
@@ -10,16 +10,15 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
-    <script type = 'text/javascript' >
-        var appInsights=window.appInsights||function(config)
-        {
-            function r(config){ t[config] = function(){ var i = arguments; t.queue.push(function(){ t[config].apply(t, i)})} }
-            var t = { config:config},u=document,e=window,o='script',s=u.createElement(o),i,f;for(s.src=config.url||'//az416426.vo.msecnd.net/scripts/a/ai.0.js',u.getElementsByTagName(o)[0].parentNode.appendChild(s),t.cookie=u.cookie,t.queue=[],i=['Event','Exception','Metric','PageView','Trace','Ajax'];i.length;)r('track'+i.pop());return r('setAuthenticatedUserContext'),r('clearAuthenticatedUserContext'),config.disableExceptionTracking||(i='onerror',r('_'+i),f=e[i],e[i]=function(config, r, u, e, o) { var s = f && f(config, r, u, e, o); return s !== !0 && t['_' + i](config, r, u, e, o),s}),t
+    <script type='text/javascript'>
+        var appInsights = window.appInsights || function (config) {
+            function r(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } }
+            var t = { config: config }, u = document, e = window, o = 'script', s = u.createElement(o), i, f; for (s.src = config.url || '//az416426.vo.msecnd.net/scripts/a/ai.0.js', u.getElementsByTagName(o)[0].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Ajax']; i.length;)r('track' + i.pop()); return r('setAuthenticatedUserContext'), r('clearAuthenticatedUserContext'), config.disableExceptionTracking || (i = 'onerror', r('_' + i), f = e[i], e[i] = function (config, r, u, e, o) { var s = f && f(config, r, u, e, o); return s !== !0 && t['_' + i](config, r, u, e, o), s }), t
         }({
-            instrumentationKey:'635292ec-3646-482d-a266-4de45946c2f2'
+            instrumentationKey: '635292ec-3646-482d-a266-4de45946c2f2'
         });
-        
-        window.appInsights=appInsights;
+
+        window.appInsights = appInsights;
         appInsights.trackPageView();
     </script>
 </head>
@@ -50,8 +49,85 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/lib")
+    @Scripts.Render("~/bundles/app")
+
+    
     @RenderSection("scripts", required: false)
+
+
+<script type="text/x-template" id="notifications-template">
+
+        <ul class="notifications">
+            <%
+            _.each(notifications, function(notification){
+            if(notification.type == 1){ %>
+            <li><span class="highlight"><%= notification.gig.artist.name %></span> has canceled the gig at <%= notification.gig.venue %> at <%= moment(notification.gig.dateTime).format("D MMM HH:mm") %></li>
+            <% }
+
+            else if(notification.type == 2){
+
+                var changes = [];
+                var originalValues = [];
+                var newValues = [];
+
+                if(notification.originalVenue != notification.gig.venue ){
+                    changes.push('venue');
+                    originalValues.push(notification.originalVenue);
+                    newValues.push(notification.gig.venue);
+
+                }
+
+                if(notification.originalDateTime != notification.gig.dateTime ){
+                    changes.push('date/time');
+                    originalValues.push(moment(notification.originalDateTime).format("D MMM HH:mm"));
+                    newValues.push(moment(notification.gig.dateTime).format("D MMM HH:mm"));
+
+                }
+            %>
+            <li><span class="highlight"><%= notification.gig.artist.name %> </span> has changed the <%= changes.join(' and ') %> of the gig from <%= originalValues.join('/') %> to <%= newValues.join('/') %> </li>
+                <%
+            }
+            })%>
+
+
+        </ul>
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $.getJSON("/api/notifications",
+                function (notifications) {
+                    if (notifications.length === 0)
+                        return;
+
+                    $(".js-notifications-count")
+                        .text(notifications.length)
+                        .removeClass("hide");
+
+                    $(".notifications").popover({
+                        html: true,
+                        title: "Notifications",
+                        content: function () {
+
+                            var compiled = _.template($("#notifications-template").html());
+
+                            return compiled({ notifications: notifications });
+                        },
+                        placement: "bottom",
+                        template: '<div class="popover popover-notifications" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
+                    }).on("shown.bs.popover", function() {
+                        $.post("/api/notifications/MarkAsRead")
+                        .done(function() {
+                                $(".js-notifications-count")
+                                    .text("")
+                                    .addClass("hide"); 
+                            });
+                    });
+                });
+
+
+        })
+    </script>
 </body>
 </html>
