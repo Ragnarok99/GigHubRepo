@@ -8,7 +8,7 @@
     var toggleArtist = function (e) {
 
         button = $(e.target);
-
+   
         var userId = button.attr("data-user-id");
 
         if (button.hasClass("btn-default")) {
