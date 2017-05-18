@@ -1,4 +1,6 @@
 body {
+      font-size: 17px;
+
   padding-top: 80px;
   padding-bottom: 20px;
 }
@@ -24,9 +26,12 @@ span.field-validation-error {
   font-weight: bold;
 }
 /*override bootstrap css*/
-body {
-  font-size: 17px;
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('fonts/glyphicons-halflings-regular.eot');
+  src: url('fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('fonts/glyphicons-halflings-regular.woff') format('woff'), url('fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
 }
+
 .navbar-inverse {
   background-color: #ff4342 ;
   border-color: #ff4342 ;

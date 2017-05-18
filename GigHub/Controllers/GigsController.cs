@@ -1,6 +1,7 @@
-﻿using GigHub.Models;
+﻿using GigHub.Core;
+using GigHub.Core.Models;
+using GigHub.Core.ViewModels;
 using GigHub.Persistence;
-using GigHub.ViewModels;
 using Microsoft.AspNet.Identity;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -11,13 +12,11 @@ namespace GigHub.Controllers
 {
     public class GigsController : Controller
     {
-        private readonly ApplicationDbContext _context;
-        private readonly UnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public GigsController()
+        public GigsController(IUnitOfWork unitOfWork)
         {
-            _context = new ApplicationDbContext();
-            _unitOfWork = new UnitOfWork(_context);
+            _unitOfWork = unitOfWork;
 
 
         }
@@ -25,7 +24,7 @@ namespace GigHub.Controllers
         [Authorize]
         public ActionResult Details(int Id)
         {
-            var gig = _context.Gigs
+            var gig = new ApplicationDbContext().Gigs
                 .Include(g => g.Artist)
                 .Single(g => g.Id == Id);
 

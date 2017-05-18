@@ -122,3 +122,14 @@ E:\.Net apps\repoGigHub\GigHubRepo\GigHub\obj\Debug\GigHub.Migrations.FollowArti
 E:\.Net apps\repoGigHub\GigHubRepo\GigHub\obj\Debug\GigHub.csproj.GenerateResource.Cache
 E:\.Net apps\repoGigHub\GigHubRepo\GigHub\obj\Debug\GigHub.dll
 E:\.Net apps\repoGigHub\GigHubRepo\GigHub\obj\Debug\GigHub.pdb
+E:\.Net apps\repoGigHub\GigHubRepo\GigHub\bin\Ninject.dll
+E:\.Net apps\repoGigHub\GigHubRepo\GigHub\bin\Ninject.Extensions.Conventions.dll
+E:\.Net apps\repoGigHub\GigHubRepo\GigHub\bin\Ninject.Web.Common.dll
+E:\.Net apps\repoGigHub\GigHubRepo\GigHub\bin\Ninject.Web.Mvc.dll
+E:\.Net apps\repoGigHub\GigHubRepo\GigHub\bin\Ninject.Web.WebApi.dll
+E:\.Net apps\repoGigHub\GigHubRepo\GigHub\bin\WebActivatorEx.dll
+E:\.Net apps\repoGigHub\GigHubRepo\GigHub\bin\Ninject.xml
+E:\.Net apps\repoGigHub\GigHubRepo\GigHub\bin\Ninject.Extensions.Conventions.xml
+E:\.Net apps\repoGigHub\GigHubRepo\GigHub\bin\Ninject.Web.Common.xml
+E:\.Net apps\repoGigHub\GigHubRepo\GigHub\bin\Ninject.Web.Mvc.xml
+E:\.Net apps\repoGigHub\GigHubRepo\GigHub\bin\Ninject.Web.WebApi.xml

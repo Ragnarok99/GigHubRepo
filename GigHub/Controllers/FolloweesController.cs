@@ -1,6 +1,5 @@
-﻿using GigHub.Models;
+﻿using GigHub.Core;
 using Microsoft.AspNet.Identity;
-using System.Linq;
 using System.Web.Mvc;
 
 namespace GigHub.Controllers
@@ -8,22 +7,18 @@ namespace GigHub.Controllers
     public class FolloweesController : Controller
     {
         // GET: Followees
-        private ApplicationDbContext _context;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public FolloweesController()
+        public FolloweesController(IUnitOfWork unitOfWork)
         {
-            _context = new ApplicationDbContext();
+            _unitOfWork = unitOfWork;
         }
 
         public ActionResult Index()
         {
-            var userId = User.Identity.GetUserId();
-            var artists = _context.Followings
-                .Where(f => f.FollowerId == userId)
-                .Select(f => f.Followee)
-                .ToList();
+            var artists = _unitOfWork.Followings.GetArtistsUserFollowing((string)User.Identity.GetUserId());
 
-            
+
 
             return View(artists);
         }
